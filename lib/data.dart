@@ -18,11 +18,8 @@ class Game {
 
 List<Game> games = [
   Game(
-    "Horizon Zero Dawn",
-    GameImage(
-      "https://www.wallpaperflare.com/static/734/272/885/horizon-zero-dawn-playstation-4-logo-aloy-horizon-zero-dawn-wallpaper.jpg",
-      "",
-    ),
+    "Black Myth Wukong",
+    GameImage("https://motionbgs.com/media/6470/black-myth-wukong.jpg", ""),
     "",
     "Guerrilla Games",
   ),
@@ -45,9 +42,9 @@ List<Game> games = [
     "Massive Entertainment",
   ),
   Game(
-    "Resident Evil 2",
+    "Resident Evil 6",
     GameImage(
-      "https://media.playstation.com/is/image/SCEA/resident-evil-2-box-art-01-ps4-us-12dec18?\$native_nt\$",
+      "https://www.xfdrmag.net/wp-content/uploads/2016/03/resident-evil-6.jpg",
       "",
     ),
     "",

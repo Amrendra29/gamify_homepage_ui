@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../data.dart';
+import '../widgets/scrollable_games_bar.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -95,6 +96,17 @@ class _HomePageState extends State<HomePage> {
           _topBarWidget(),
           SizedBox(height: _deviceHeight * 0.13),
           _featuredgamesInfoWidget(),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: _deviceHeight * 0.01),
+            child: ScrollableGamesBar(
+              _deviceHeight * 0.24,
+              _deviceWidth,
+              true,
+              games,
+            ),
+          ),
+          _featuredGameBannerWidget(),
+          ScrollableGamesBar(_deviceHeight * 0.22, _deviceWidth, false, games2),
         ],
       ),
     );
@@ -160,6 +172,20 @@ class _HomePageState extends State<HomePage> {
             }).toList(),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _featuredGameBannerWidget() {
+    return Container(
+      height: _deviceHeight * 0.13,
+      width: _deviceWidth,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: NetworkImage(featuredGames[3].coverImage.url),
+        ),
       ),
     );
   }
