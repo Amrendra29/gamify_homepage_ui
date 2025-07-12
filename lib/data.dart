@@ -64,14 +64,14 @@ List<Game> games2 = [
   ),
   Game(
     "The Last of Us Part II",
-    GameImage("https://mvpo.us/img/P6253.jpg", ""),
+    GameImage("https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/12/mixcollage-14-dec-2024-05-56-am-7891.jpg", ""),
     "",
     "Naughty Dog",
   ),
   Game(
     "Sekiro: Shadows Die Twice",
     GameImage(
-      "https://onlysp.escapistmagazine.com/wp-content/uploads/2019/03/Sekiro-Shadows-Die-Twice-logo-art.jpg",
+      "https://cdn.mobygames.com/covers/3561816-sekiro-shadows-die-twice-playstation-4-front-cover.jpg",
       "",
     ),
     "",
