@@ -8,12 +8,13 @@ class ScrollableGamesBar extends StatelessWidget {
 
   final List<Game> _gamesData;
 
-  ScrollableGamesBar(
+  const ScrollableGamesBar(
     this._height,
     this._widgth,
     this._showTitle,
-    this._gamesData,
-  );
+    this._gamesData, {
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class ScrollableGamesBar extends StatelessWidget {
       child: ListView(
         physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
-        children: _gamesData.map((_game) {
+        children: _gamesData.map((game) {
           return Container(
             height: _height,
             width: _widgth * 0.30,
@@ -42,17 +43,17 @@ class ScrollableGamesBar extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5),
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: NetworkImage(_game.coverImage.url),
+                      image: NetworkImage(game.coverImage.url),
                     ),
                   ),
                 ),
                 _showTitle
                     ? Text(
-                        _game.title,
+                        game.title,
                         maxLines: 2,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: _height * 0.07,
+                          fontSize: _height * 0.06,
                         ),
                       )
                     : Container(),

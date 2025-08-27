@@ -4,6 +4,8 @@ import '../data.dart';
 import '../widgets/scrollable_games_bar.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _HomePageState();
@@ -44,18 +46,18 @@ class _HomePageState extends State<HomePage> {
       height: _deviceHeight * 0.50,
       width: _deviceWidth,
       child: PageView(
-        onPageChanged: (_index) {
+        onPageChanged: (index) {
           setState(() {
-            _selectedGame = _index;
+            _selectedGame = index;
           });
         },
         scrollDirection: Axis.horizontal,
-        children: featuredGames.map((_game) {
+        children: featuredGames.map((game) {
           return Container(
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: NetworkImage(_game.coverImage.url),
+                image: NetworkImage(game.coverImage.url),
               ),
             ),
           );
@@ -156,16 +158,16 @@ class _HomePageState extends State<HomePage> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
 
-            children: featuredGames.map((_game) {
-              double _circleRadius = _deviceHeight * 0.004;
-              bool _isactive =
-                  _game.title == featuredGames[_selectedGame].title;
+            children: featuredGames.map((game) {
+              double circleRadius = _deviceHeight * 0.004;
+              bool isactive =
+                  game.title == featuredGames[_selectedGame].title;
               return Container(
                 margin: EdgeInsets.only(right: _deviceWidth * 0.015),
-                height: _circleRadius * 2,
-                width: _circleRadius * 2,
+                height: circleRadius * 2,
+                width: circleRadius * 2,
                 decoration: BoxDecoration(
-                  color: _isactive ? Colors.green : Colors.grey,
+                  color: isactive ? Colors.green : Colors.grey,
                   borderRadius: BorderRadius.circular(100),
                 ),
               );
